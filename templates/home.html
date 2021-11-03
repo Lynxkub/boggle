@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Boggle!{% endblock %}
+
+{% block content %}
+{% for row in make_board %}
+    {{row}}
+    <br>
+    {% endfor %}
+    <div id="guessBox">
+    <form method="POST" class="guess_form">
+        <input type="text" placeholder="Guess" class="guess">
+        <button>Submit</button>
+    </form>
+</div>
+    <p id="gameData">Score:<span id="score"></span>
+    Time:<span id="timer"></span>
+    </p>
+    <ul class="guesses"></ul>
+{% endblock %}
